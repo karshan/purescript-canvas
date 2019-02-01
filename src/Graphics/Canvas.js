@@ -574,3 +574,19 @@ exports.bezierCurveTo = function(ctx) {
         };
     };
 };
+
+exports.fillSVGPath = function(ctx) {
+    return function(p) {
+        return function() {
+            ctx.fill(new Path2D(p));
+        };
+    };
+};
+
+exports.strokeSVGPath = function(ctx) {
+    return function(p) {
+        return function() {
+            ctx.stroke(new Path2D(p));
+        };
+    };
+};

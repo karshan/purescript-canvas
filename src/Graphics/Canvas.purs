@@ -60,6 +60,9 @@ module Graphics.Canvas
   , strokePath
   , fillPath
 
+  , strokeSVGPath
+  , fillSVGPath
+
   , arc
 
   , rect
@@ -684,3 +687,9 @@ type BezierCurve =
 
 -- | Draw a cubic Bézier curve.
 foreign import bezierCurveTo :: Context2D -> BezierCurve -> Effect Unit
+
+-- | Draw a filled SVG path command.
+foreign import fillSVGPath :: Context2D -> String -> Effect Unit
+
+-- | Draw a SVG path command.
+foreign import strokeSVGPath :: Context2D -> String -> Effect Unit
